@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="../assets/cuadrecaja.css">
+    <title>Cuadre de Caja</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+
+            <nav class="menu">
+              
+                <div class="menu-inicio">
+                    <i class='bx bx-money-withdraw'></i>
+                    <a href="cuadrecaja.html">Cuadre de Caja</a> 
+                </div>
+                <div class="menu-usuario">
+                    <i class='bx bx-user-circle'></i>
+                    <a href="#">Usuario</a>
+                </div>
+           
+            </nav>
+        </div>
+
+        <div class="menu-lateral">
+            <div class="logo">
+                <img src="logo.PNG" alt="logo">
+            </div>
+            <ul class="opciones">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="ventas.html">Estado de Ventas</a></li>
+                <li><a href="inventario.html">Gestion de Inventario</a></li>
+                <li><a href="libro.html">Libro Diario</a></li>
+                <li><a href="cuadrecaja.html">Cuadre de caja</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="confi.html">Configuración</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <div class="bloque1">
+                <h2>Cuadre de Caja</h2>
+
+                <div class="selector-fecha">
+                    <label for="fecha">Seleccione una fecha</label>
+                    <input type="date" id="fecha">
+                    <button id="buscar">Buscar</button>
+                </div>
+
+                <div class="ingreso">
+                    <div class="ingresos-container">
+                        <h2>Detalles de Ingresos y Egresos</h2>
+
+                        <div class="ingresos">
+                            <span>Total de gastos</span>
+                            <span>000.00$</span>
+                        </div>
+                        <div class="ingresos">
+                            <span>Total de efectivo</span>
+                            <span>000.00$</span>
+                        </div>
+                        <div class="ingresos">
+                            <span>Total de ventas</span>
+                            <span>000.00$</span>
+                        </div>
+                        <button onclick="descargarExel()">Descargar Plantilla</button>
+                    
+                    </div>
+                </div>
+
+                <div class="cierre-caja">
+                    <h2>Cierre Caja</h2>
+                    <ul>
+                        <li>Ventas totales de hoy: 000.00$</li>
+                        <li>Gastos totales de hoy: 000.00$</li>
+                        <li>Efectivo totales de hoy: 000.00$</li>
+                        <li>Diferencias: 000.00$</li>
+                    </ul>
+
+                    <div class="button">
+
+                    <button onclick="realizarCierre">Cerrar Caja</button>
+                    <button onclick="descargarExel">Descargar Plantilla</button>
+                </div>
+                </div>
+            </div>
+        </main>
+        </header> 
+        </body>
+        </html>
