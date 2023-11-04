@@ -6,6 +6,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" type="text/css" href="../assets/style.css">
+    <script src="script.js"></script>
     <title>Inicio</title>
 </head>
 <body>
@@ -46,61 +47,120 @@
                 <div class="bloque1">
                     <div class="mesas">
                         <h2>Estado de Mesas</h2>
-
                         <div class="mesa-1">
-                            <p>Mesa 1</p>
-                            <button class="disponible-btn">Disponible</button>
+                            <p>Mostrador</p>
+                            <button class="disponible-btn" data-id="1">Disponible</button>
                         </div>
                         <div class="mesa-2">
-                            <p>Mesa 2</p>
-                            <button class="disponible-btn">Disponible</button>
+                            <p>Mesa 1</p>
+                            <button class="disponible-btn" data-id="2">Disponible</button>
                         </div>
                         <div class="mesa-3">
-                            <p>Mesa 3</p>
-                            <button class="disponible-btn">Disponible</button>
+                            <p>Mesa 2</p>
+                            <button class="disponible-btn" data-id="3">Disponible</button>
                         </div>
                         <div class="mesa-4">
-                            <p>Mesa 4</p>
-                            <button class="disponible-btn">Disponible</button>
+                            <p>Mesa 3</p>
+                            <button class="disponible-btn" data-id="4">Disponible</button>
                         </div>
                         <div class="mesa-5">
-                            <p>Mostrador</p>
-                            <button class="disponible-btn">Disponible</button>
+                            <p>Mesa 4</p>
+                            <button class="disponible-btn" data-id="5">Disponible</button>
                         </div>
 
+                   
                     </div>
                 </div>
                 
-                <div class="bloque2">
-                    
+                <div class="bloque2" id="product-list-container">
+
                     <div class="productos">
-                    
                         <h2>Productos Disponibles</h2>
-                   
-                        <ul class="productos1">
+                        <label for="buscarProducto">Buscar Producto:</label>
+                      <input type="text" id="buscarProductoInput" name="buscarProducto" placeholder="Ingrese el nombre del producto">
+                      <button id="buscarProductoButton">Buscar</button>
                         
-                            <li><a href="#">Pollo Broaster</a></li>
-                        
-                            <li><a href="#">Pollo Asado</a></li>
-                        
-                            <li><a href="#">Gaseosas</a></li>
-                        
-                            <li><a href="#">Combos</a></li>
-                        
-                            <li><a href="#">Jugos Naturales</a></li>
-                        
-                            <li><a href="#">Panes</a></li>
-                    
-                   
-                        </ul>
+                        <form id="agregarProductoForm">
+                            <label for="nombreProducto">Nombre del Producto:</label>
+                            <input type="text" id="nombreProducto" required>
+                
+                            <label for="categoriaProducto">Categoría:</label>
+                            <input type="text" id="categoriaProducto" required>
+                
+                            <label for="precioProducto">Precio:</label>
+                            <input type="number" id="precioProducto" required>
+                
+                            <button type="button" id="agregarProducto">Agregar Producto</button>
+                        </form>
+                        <div class="table-wrapper">
+                          <table id="product-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Seleccionar</th>
+                                    <th>Eliminar</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="product-list">
+                                <!-- Aquí se cargarán los productos dinámicamente con JavaScript -->
+                            </tbody>
+                          </table>
+                       </div>
                     </div>
                 </div>
+            </div>
+                
+              
+
+        
+                
+                
                 <div class="bloque3">
                     <div class="cajaRegistradora">
-                        <h2>Cuentas</h2>
-                    </div>
+                    <h2>Cuentas</h2>
+                        
+ <form id="cajaForm">
+    <label for="numeroMesa">Número de Mesa:</label>
+    <input type="text" id="numeroMesa" name="numeroMesa" required>
 
+    <label for="producto">Producto:</label>
+    <input type="text" id="producto" name="producto" required>
+
+    <div class="cantidad-precio">
+        <div class="cantidad">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required>
+        </div>
+
+        <div class="precio">
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" required>
+        </div>
+    </div>
+        <h3>Cuenta Total: <span id="cuentaTotal">0</span></h3>
+        <label for="metodoPago">Método de Pago:</label>
+        <select id="metodoPago" name="metodoPago" required>
+            <option value="efectivo">Efectivo</option>
+            <option value="transferencia">Transferencia</option>
+        </select>
+        <label for="montoRecibido">Monto Recibido:</label>
+        <input type="number" id="montoRecibido" name="montoRecibido" required>
+        <p>Vuelto: <span id="vuelto">0</span></p>
+        <button type="button" id="registrarCuenta">Registrar</button>
+        <button type="button" id="eliminarCuenta">Eliminar Cuenta</button>
+        <button type="button" id="imprimirFactura">Factura</button>
+    </form>
+                    </div>
                 </div>
+                        
+
+
+
+
+                    </div>
             </div>
         </main>
 

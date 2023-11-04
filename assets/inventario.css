@@ -111,8 +111,8 @@ main{
     background-color: #fff;
     color: #0d1b2a;
     position: absolute;
-    width: 55%;
-    height: 475px;
+    width: 80%;
+    height: 605px;
     left: 265px;
     margin-top: 80px;
     padding-bottom: 30px;
@@ -152,24 +152,4 @@ main{
 }
 .listas-productos a:hover{
     color: #e8e8e8;
-}
-.bloque2 {
-    background-color: #0d1b2a;
-    color: #fff;
-    position: relative;
-    width: 20%;
-    height: 480px;
-    left: 85%;
-    margin-top: 80px;
-    margin-left: -80px ;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-
-}
-
-.bloque2 h2 {
-    text-align: center;
 }

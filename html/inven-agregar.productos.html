@@ -59,29 +59,10 @@
 
             
                     <button type="button" onclick="agregarProducto()">Agregar Producto</button>
+                    <button type="button" onclick="cancelarProducto()">cancelar</button>
                 </form>
             </div>
             
-                <script>
-                    // Función para agregar un producto a la lista
-                    function agregarProducto() {
-                        var nombre = document.getElementById("product-name").value;
-                        var cantidad = parseInt(document.getElementById("product-quantity").value);
-                        var precio = parseFloat(document.getElementById("product-price").value);
-                        var categoria = document.getElementById("product-category").value;
-                
-                        if (nombre && !isNaN(cantidad) && !isNaN(precio)) {
-                            var nuevoProducto = { nombre, cantidad, precio, categoria };
-                            var productos = JSON.parse(localStorage.getItem("productos")) || [];
-                            productos.push(nuevoProducto);
-                            localStorage.setItem("productos", JSON.stringify(productos));
-                            alert("Producto agregado correctamente.");
-                            location.href = "inven-agregar.productos.html"; // Redirige de vuelta a la página de inventario.
-                        } else {
-                            alert("Por favor, complete todos los campos correctamente.");
-                        }
-                    }
-                </script>
         </main>
     </header>
 </body>
