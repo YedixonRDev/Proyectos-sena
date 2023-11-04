@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="../assets/inven-agregar.productos.css">
+    <title>Inventario -Agregar productos</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+
+            <nav class="menu">
+              
+                <div class="menu-inicio">
+                    <i class='bx bxs-objects-vertical-bottom'></i>
+                    <a href="inventario.html">Gestor de inventario </a> 
+                </div>
+                <div class="menu-usuario">
+                    <i class='bx bx-user-circle'></i>
+                    <a href="#">Usuario</a>
+                </div>
+           
+            </nav>
+        </div>
+
+        <div class="menu-lateral">
+            <div class="logo">
+                <img src="logo.PNG" alt="logo">
+            </div>
+            <ul class="opciones">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="ventas.html">Estado de Ventas</a></li>
+                <li><a href="inventario.html">Gestion de Inventario</a></li>
+                <li><a href="libro.html">Libro Diario</a></li>
+                <li><a href="cuadrecaja.html">Cuadre de caja</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="confi.html">Configuración</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <div class="bloque1">
+                <h2>Agregar Productos</h2>
+                <form id="add-product-form">
+                    <label for="product-name">Nombre del Producto:</label>
+                    <input type="text" id="product-name" required>
+            
+                    <label for="product-quantity">Cantidad Disponible:</label>
+                    <input type="number" id="product-quantity" required>
+            
+                    <label for="product-price">Precio:</label>
+                    <input type="number" id="product-price" step="0.01" required>
+
+                    <label for="product-category">Categoría:</label>
+                    <input type="text" id="product-category" required>
+
+            
+                    <button type="button" onclick="agregarProducto()">Agregar Producto</button>
+                </form>
+            </div>
+            
+                <script>
+                    // Función para agregar un producto a la lista
+                    function agregarProducto() {
+                        var nombre = document.getElementById("product-name").value;
+                        var cantidad = parseInt(document.getElementById("product-quantity").value);
+                        var precio = parseFloat(document.getElementById("product-price").value);
+                        var categoria = document.getElementById("product-category").value;
+                
+                        if (nombre && !isNaN(cantidad) && !isNaN(precio)) {
+                            var nuevoProducto = { nombre, cantidad, precio, categoria };
+                            var productos = JSON.parse(localStorage.getItem("productos")) || [];
+                            productos.push(nuevoProducto);
+                            localStorage.setItem("productos", JSON.stringify(productos));
+                            alert("Producto agregado correctamente.");
+                            location.href = "inven-agregar.productos.html"; // Redirige de vuelta a la página de inventario.
+                        } else {
+                            alert("Por favor, complete todos los campos correctamente.");
+                        }
+                    }
+                </script>
+        </main>
+    </header>
+</body>
+</html>
