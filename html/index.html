@@ -33,7 +33,6 @@
             </div>
             <ul class="opciones">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="ventas.html">Estado de Ventas</a></li>
                 <li><a href="inventario.html">Gestion de Inventario</a></li>
                 <li><a href="libro.html">Libro Diario</a></li>
                 <li><a href="cuadrecaja.html">Cuadre de caja</a></li>
@@ -49,23 +48,23 @@
                         <h2>Estado de Mesas</h2>
                         <div class="mesa-1">
                             <p>Mostrador</p>
-                            <button class="disponible-btn" data-id="1">Disponible</button>
+                            <button class="disponible-btn" data-id="0">Disponible</button>
                         </div>
                         <div class="mesa-2">
                             <p>Mesa 1</p>
-                            <button class="disponible-btn" data-id="2">Disponible</button>
+                            <button class="disponible-btn" data-id="1">Disponible</button>
                         </div>
                         <div class="mesa-3">
                             <p>Mesa 2</p>
-                            <button class="disponible-btn" data-id="3">Disponible</button>
+                            <button class="disponible-btn" data-id="2">Disponible</button>
                         </div>
                         <div class="mesa-4">
                             <p>Mesa 3</p>
-                            <button class="disponible-btn" data-id="4">Disponible</button>
+                            <button class="disponible-btn" data-id="3">Disponible</button>
                         </div>
                         <div class="mesa-5">
                             <p>Mesa 4</p>
-                            <button class="disponible-btn" data-id="5">Disponible</button>
+                            <button class="disponible-btn" data-id="4">Disponible</button>
                         </div>
 
                    
@@ -113,55 +112,57 @@
                 </div>
             </div>
                 
-              
-
-        
-                
-                
-                <div class="bloque3">
-                    <div class="cajaRegistradora">
+            <div class="bloque3">
+                <div class="cajaRegistradora">
                     <h2>Cuentas</h2>
-                        
- <form id="cajaForm">
-    <label for="numeroMesa">Número de Mesa:</label>
-    <input type="text" id="numeroMesa" name="numeroMesa" required>
-
-    <label for="producto">Producto:</label>
-    <input type="text" id="producto" name="producto" required>
-
-    <div class="cantidad-precio">
-        <div class="cantidad">
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" required>
-        </div>
-
-        <div class="precio">
-            <label for="precio">Precio:</label>
-            <input type="number" id="precio" name="precio" required>
-        </div>
-    </div>
-        <h3>Cuenta Total: <span id="cuentaTotal">0</span></h3>
-        <label for="metodoPago">Método de Pago:</label>
-        <select id="metodoPago" name="metodoPago" required>
-            <option value="efectivo">Efectivo</option>
-            <option value="transferencia">Transferencia</option>
-        </select>
-        <label for="montoRecibido">Monto Recibido:</label>
-        <input type="number" id="montoRecibido" name="montoRecibido" required>
-        <p>Vuelto: <span id="vuelto">0</span></p>
-        <button type="button" id="registrarCuenta">Registrar</button>
-        <button type="button" id="eliminarCuenta">Eliminar Cuenta</button>
-        <button type="button" id="imprimirFactura">Factura</button>
-    </form>
+                    <div class="scroll">
+                    <form id="cajaForm">
+                        <div class="numeroMesa">
+                        <label for="numeroMesa">Número de Mesa:</label>
+                        <input type="text" id="numeroMesa" name="numeroMesa" required>
                     </div>
+
+                        <div class="producto">
+                        <label for="producto">Producto:</label>
+                        <input type="text" id="producto" name="producto" required>
+                    </div>
+            
+                        <div class="precio">
+                            <label for="precio">Precio:</label>
+                            <input type="number" id="precio" name="precio" required>
+                        </div>
+            
+                        <ul id="listaCuenta"></ul>
+                        
+            
+                        <h3>Cuenta Total: <span id="cuentaTotal">0</span></h3>
+
+                        <div class="metodoPago">
+                        <label for="metodoPago">Método de Pago:</label>
+                        <select id="metodoPago" name="metodoPago" required>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="transferencia">Transferencia</option>
+                        </select>
+                    
+                        <label for "montoRecibido">Monto Recibido:</label>
+                        <input type="number" id="montoRecibido" name="montoRecibido" required>
+                        </div>
+                        <p>Vuelto: <span id="vuelto">0</span></p>
+                        <button type="button" id="generarFactura">Generar de Vuela</button>
+                    
+                        
+                        <div class="buttonFinal">
+                            
+                        <button type="button" id="generarFactura">Imprimir Factura</button>
+                        <button type="button" id="registrarCuenta">Registrar</button>
+                        <button type="button" id="eliminarCuenta">Eliminar Cuenta</button>
+                    </div>
+                    </form>
                 </div>
-                        
-
-
-
-
-                    </div>
+                </div>
             </div>
+              
+            
         </main>
 
     </header>
