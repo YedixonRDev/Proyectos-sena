@@ -12,9 +12,7 @@
 <body>
     <header class="header">
         <div class="container">
-
             <nav class="menu">
-              
                 <div class="menu-inicio">
                     <i class='bx bxs-objects-vertical-bottom'></i>
                     <a href="inventario.html">Gestor de inventario </a> 
@@ -23,50 +21,174 @@
                     <i class='bx bx-user-circle'></i>
                     <a href="#">Usuario</a>
                 </div>
-           
             </nav>
         </div>
-
         <div class="menu-lateral">
             <div class="logo">
                 <img src="logo.PNG" alt="logo">
             </div>
             <ul class="opciones">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="ventas.html">Estado de Ventas</a></li>
                 <li><a href="inventario.html">Gestion de Inventario</a></li>
                 <li><a href="libro.html">Libro Diario</a></li>
                 <li><a href="cuadrecaja.html">Cuadre de caja</a></li>
                 <li><a href="reportes.html">Reportes</a></li>
-                <li><a href="confi.html">Configuración</a></li>
+                <li><a href="confi.html">Configuración</a></li>        
             </ul>
         </div>
+    </header>
+    <main>
+        <div class="bloque1">
+            <h2>Inventario de Productos</h2>
 
-        <main>
-            <div class="bloque1">
-                <h2>Inventario de Productos</h2>
-                <table id="product-table">
-                    <thead>
-                        <tr>
-                            <th class="name">Nombre del Producto</th>
-                            <th class="cant">Cantidad Disponible</th>
-                            <th class="precio">Precio</th>
-                            <th class="categoria">Categoría</th>
-                            <th class="acciones">Eliminar</th>
-                        </tr>
+            <label for="buscarProducto">Buscar Producto:</label>
+            <input type="text" id="search-input" placeholder="Buscar producto">
+            <button type="button" id="search-button">Buscar</button>
 
-                        <div class="progress-bar">
-                            <div class="bar"></div>
-                        </div>
-
-                    </thead>
-                    <tbody id="product-list">
-                        <!-- Aquí se cargarán los productos dinámicamente con JavaScript -->
-                    </tbody>
-                </table>
-            </div>
             
-        </main>
+
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th class="numero">#</th>
+                        <th class="name">Nombre del Producto</th>
+                        <th class="cant">Cantidad Disponible</th>
+                        <th class="precio">Precio</th>
+                        <th class="categoria">Categoría</th>
+                        <th class="acciones">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <!-- Aquí se cargarán los productos dinámicamente con JavaScript -->
+                </tbody>
+            </table>
+            <div class="RegistrarProductos">
+                <a href="inven-agregar.productos.html">
+                    <button type="button">Registrar nuevos productos </button>
+                </a>
+            </div>
+            <div class="progress-bar">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </main>
+
+    <script> 
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obtener la información del producto del almacenamiento local
+        const productList = JSON.parse(localStorage.getItem("productList"));
+    
+        // Verificar si la lista de productos existe
+        if (productList) {
+            // Crear filas en la tabla con los datos de los productos
+            const productListElement = document.getElementById("product-list");
+    
+            productList.forEach((product, index) => {
+                const newRow = productListElement.insertRow();
+                newRow.innerHTML = `<td>${index + 1}</td>
+                                    <td>${product.name}</td>
+                                    <td>${product.quantity}</td>
+                                    <td>${product.price}</td>
+                                    <td>${product.category}</td>
+                                    <td><button class="delete-button" data-index="${index}">Eliminar</button></td>`;
+            });
+    
+            // Agregar evento de clic a los botones de eliminar
+            const deleteButtons = document.querySelectorAll(".delete-button");
+    
+            deleteButtons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    const index = this.getAttribute("data-index");
+                    deleteProduct(index);
+                });
+            });
+        }
+    
+        // Limpiar el almacenamiento local (mover esta línea fuera del if)
+        localStorage.removeItem("newProduct");
+    
+        // Verificar si los elementos necesarios existen en la página
+        const searchButton = document.getElementById("search-button");
+        const searchInput = document.getElementById("search-input");
+        const productListTable = document.getElementById("product-table");
+    
+        if (searchButton && searchInput && productListTable) {
+            // Agregar evento de clic al botón de búsqueda
+            searchButton.addEventListener("click", function () {
+                searchProducts();
+            });
+    
+            // Agregar evento de pulsación de tecla a la barra de búsqueda para buscar al presionar "Enter"
+            searchInput.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    searchProducts();
+                }
+            });
+    
+            // Función para realizar la búsqueda
+            function searchProducts() {
+                const searchInputValue = searchInput.value.toLowerCase();
+                const rows = productListTable.getElementsByTagName("tr");
+    
+                for (let i = 1; i < rows.length; i++) {
+                    const name = rows[i].getElementsByTagName("td")[1].textContent.toLowerCase();
+                    const category = rows[i].getElementsByTagName("td")[4].textContent.toLowerCase();
+    
+                    // Ocultar o mostrar la fila según la coincidencia de búsqueda
+                    if (name.includes(searchInputValue) || category.includes(searchInputValue)) {
+                        rows[i].style.display = "";
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+            }
+        } else {
+            console.error("Los elementos necesarios no existen en la página.");
+        }
+    
+        // Función para eliminar un producto
+        function deleteProduct(index) {
+            if (confirm("¿Estás seguro de que quieres eliminar este producto?")) {
+                productList.splice(index, 1);
+                updateTable();
+                saveProductListToLocalStorage();
+            }
+        }
+    
+        // Función para actualizar la tabla después de eliminar un producto
+        function updateTable() {
+            const productListElement = document.getElementById("product-list");
+            productListElement.innerHTML = ""; // Limpiar la tabla
+    
+            productList.forEach((product, index) => {
+                const newRow = productListElement.insertRow();
+                newRow.innerHTML = `<td>${index + 1}</td>
+                                    <td>${product.name}</td>
+                                    <td>${product.quantity}</td>
+                                    <td>${product.price}</td>
+                                    <td>${product.category}</td>
+                                    <td><button class="delete-button" data-index="${index}">Eliminar</button></td>`;
+            });
+    
+            // Volver a agregar evento de clic a los nuevos botones de eliminar
+            const deleteButtons = document.querySelectorAll(".delete-button");
+    
+            deleteButtons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    const index = this.getAttribute("data-index");
+                    deleteProduct(index);
+                });
+            });
+        }
+    
+        // Función para guardar la lista actualizada en el almacenamiento local
+        function saveProductListToLocalStorage() {
+            localStorage.setItem("productList", JSON.stringify(productList));
+        }
+    });
+    </script>
+    
+        
     </header>
 </body>
 </html>

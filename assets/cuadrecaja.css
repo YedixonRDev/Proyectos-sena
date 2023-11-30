@@ -180,13 +180,13 @@ main{
     justify-content: space-between;
     margin-bottom: 5px;
     margin-top: 1px;
+    margin-left: 190px;
     
 
 }
 
 .ingreso ul{
-    margin-top: 5px;
-    margin-left: 1000px;
+    margin-top: 1px;
    
 }
 
@@ -206,7 +206,8 @@ main{
 }
 .cierre-caja {
 
-    margin-left: -90px ;
+    margin-left: -70px ;
+    margin-top: 20px;
 }
 
 ul {
@@ -229,7 +230,8 @@ button{
     
 }
 .button {
-    margin-left: 380px;
+    margin-left: 550px;
+    margin-top: 10px;
     
 }
 button:hover {

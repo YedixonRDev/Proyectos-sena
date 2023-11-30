@@ -1,0 +1,20 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "C:\\Users\\Yedy\\Documents\\ProyectoSENA\\Java\\src"
+    ],
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/target": true
+    },
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-1.8",
+            "path": "ruta-a-tu-instalacion-de-Java"
+        }
+    ]
+}

@@ -119,6 +119,7 @@ main{
     border-radius: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
 }
 
 .bloque1 h2{
@@ -226,23 +227,49 @@ button#cancelar{
     background-color: #dc3545;
 
 }
-.bloque2 {
-    background-color: #0d1b2a;
-    color: #fff;
-    position: relative;
-    width: 20%;
-    height: 480px;
-    left: 85%;
-    margin-top: 80px;
-    margin-left: -80px ;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.bloque2 h2 {
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Aplicar anchos a las columnas directamente sin clases adicionales */
+th:nth-child(2), td:nth-child(2) {
+    width: 30%;
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 50%;
+}
+
+th:nth-child(4), td:nth-child(4) {
+    width: 20%;
+}
+
+th:nth-child(5), td:nth-child(5) {
+    width: 3%;
+}
+
+.buttonCajaPlantilla{ 
+    text-align: center;
+    font-size: 28px;
+}
+
+#total-gastos {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 20px; /* Ajusta según sea necesario */
     text-align: center;
 }

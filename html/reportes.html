@@ -32,50 +32,73 @@
             </div>
             <ul class="opciones">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="ventas.html">Estado de Ventas</a></li>
                 <li><a href="inventario.html">Gestion de Inventario</a></li>
                 <li><a href="libro.html">Libro Diario</a></li>
                 <li><a href="cuadrecaja.html">Cuadre de caja</a></li>
                 <li><a href="reportes.html">Reportes</a></li>
-                <li><a href="confi.html">Configuración</a></li>
+                <li><a href="confi.html">Configuración</a></li>        
             </ul>
         </div>
 
         <main>
             <div class="bloque1">
-                <h2>Reporte de ventas</h2>
-
+                <h2>Reporte de Ventas</h2>
+    
+                <p>
+                    Bienvenido al Reporte de Ventas. Utilice el selector de fechas para visualizar los datos de ventas para un día específico. 
+                    Esta herramienta le proporcionará un resumen de las ventas totales para la fecha seleccionada, permitiéndole realizar un análisis detallado.
+                </p>
+    
                 <div class="selector-fecha">
                     <label for="fecha">Seleccione una fecha:</label>
                     <input type="date" id="fecha">
-                    <button id="buscar">Generar reportes</button>
+                    <button id="buscar" onclick="generarReportes()">Generar Reportes</button>
                 </div>
-
+    
                 <div class="reportes">
                     <div class="reportes-container">
-                        <h2>Reportes por dia</h2>
-                        <ul class="productos">
-                            <li>Cant. de Pollo Broaster: xxx <br>
-                            Venta Total: 000.00$</li>
-
-                            <li>Cant. de Pollo Asado: xxx <br>
-                                Venta Total: 000.00$</li>
-
-                            <li>Cant. de Panes: xxx <br>
-                                    Venta Total: 000.00$</li>
-                            <li>Cant. de Gaseosas: xxx <br>
-                                    Venta Total: 000.00$</li>
-                            <li>Cant. de Combos: xxx <br>
-                                    Venta Total: 000.00$</li>
-                            <li>Cant. de Jugos Naturales : xxx <br>
-                                    Venta Total: 000.00$</li>
-                        </ul>
-
+                        <h3>Reportes por Día</h3>
+                        
                         <div class="venta">
-                            <ul class="venta">
+                            <ul class="venta" id="venta-diaria">
                                 <li>Venta Total: 000.00$</li>
                             </ul>
                             <button onclick="descargarExel()">Descargar Plantilla</button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </main>
+    
+        <script>
+            // Datos de ejemplo (puedes obtener estos datos de tu backend)
+            const ventasDiarias = [
+                { fecha: "2023-11-15", monto: 500.00 },
+                { fecha: "2023-11-15", monto: 700.00 },
+                { fecha: "2023-11-16", monto: 300.00 },
+                // ... más datos ...
+            ];
+    
+            // Función para generar los reportes
+            function generarReportes() {
+                const fechaSeleccionada = document.getElementById("fecha").value;
+    
+                // Filtrar las ventas para la fecha seleccionada
+                const ventasFiltradas = ventasDiarias.filter(venta => venta.fecha === fechaSeleccionada);
+    
+                // Calcular el total de ventas diarias
+                const totalVentasDiarias = ventasFiltradas.reduce((total, venta) => total + venta.monto, 0);
+    
+                // Actualizar el contenido de la sección de ventas diarias
+                const ventaDiariaElement = document.getElementById("venta-diaria");
+                ventaDiariaElement.innerHTML = `<li>Venta Total: ${totalVentasDiarias.toFixed(2)}$</li>`;
+            }
+    
+            // Función para descargar la plantilla en Excel (puedes implementar esta función según tus necesidades)
+            function descargarExel() {
+                // Implementa la lógica para descargar la plantilla en Excel
+                alert("Descargando Plantilla en Excel...");
+            }
+        </script>
+    </body>
+    </html>

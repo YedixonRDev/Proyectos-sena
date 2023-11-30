@@ -123,14 +123,20 @@ main{
 
 .bloque1 h2{
 
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 25px;
     margin-left: 10px;
     text-align: center;
 
 
 }
-
+.bloque1 h3{
+    margin-top: 15px;
+    font-size: 20px;
+    margin-left: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
 .selector-fecha{
     text-align: center;
 }
@@ -193,7 +199,7 @@ main{
     list-style: none;
     font-size: 15px;
     text-align: center;
-    margin-left: 180px;
+    margin-left: 400px;
     margin-top: 10px;
 }
 
@@ -209,9 +215,16 @@ button {
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
-    margin-left: 150px;
+    margin-left: 10px;
 }
 
 button:hover {
     background-color: #054487;
+}
+
+p{
+    margin-left: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

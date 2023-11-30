@@ -88,13 +88,15 @@
                 
                             <label for="precioProducto">Precio:</label>
                             <input type="number" id="precioProducto" required>
-                
+                       
                             <button type="button" id="agregarProducto">Agregar Producto</button>
+                    
                         </form>
                         <div class="table-wrapper">
                           <table id="product-table">
                             <thead>
                                 <tr>
+                            
                                     <th>Nombre</th>
                                     <th>Categoría</th>
                                     <th>Precio</th>
@@ -116,7 +118,7 @@
                 <div class="cajaRegistradora">
                     <h2>Cuentas</h2>
                     <div class="scroll">
-                    <form id="cajaForm">
+                    <form id="facturacionServlet" method="post">
                         <div class="numeroMesa">
                         <label for="numeroMesa">Número de Mesa:</label>
                         <input type="text" id="numeroMesa" name="numeroMesa" required>
