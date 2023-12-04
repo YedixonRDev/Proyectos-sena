@@ -24,9 +24,6 @@ public class ProcesarMovimiento extends HttpServlet {
             throws ServletException, IOException {
 
         List<Movimiento> listaMovimientos = new ArrayList<>();
-        ListaMovimiento.add(new Movimiento("Gastos", "1000", "Harina"));
-        ListaMovimiento.add(new Movimiento("Tranferencias", "50000", "Pan y Pollo"));
-        ListaMovimiento.add(new Movimiento("Prestamo", "10000", "Prestamo jose"));
 
         HttpSession miSesion = request.getSession();
         miSesion.setAttribute("listaMovimientos", ListaMovimiento.getListaMovimientos());
