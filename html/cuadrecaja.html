@@ -43,51 +43,64 @@
         <main>
             <div class="bloque1">
                 <h2>Cuadre de Caja</h2>
-
+    
                 <div class="selector-fecha">
                     <label for="fecha">Seleccione una fecha</label>
                     <input type="date" id="fecha">
                     <button id="buscar">Buscar</button>
                 </div>
-
+    
                 <div class="ingreso">
                     <div class="ingresos-container">
                         <h2>Detalles de Ingresos y Egresos</h2>
-
+    
                         <div class="ingresos">
-                            <span>Total de gastos</span>
-                            <span>000.00$</span>
+                            <label>Total de gastos</label>
+                            <input type="text" id="total-gastos" value="000.00$" readonly>
                         </div>
                         <div class="ingresos">
-                            <span>Total de efectivo</span>
-                            <span>000.00$</span>
+                            <label>Total de efectivo</label>
+                            <input type="text" id="total-efectivo" value="000.00$" readonly>
                         </div>
                         <div class="ingresos">
-                            <span>Total de ventas</span>
-                            <span>000.00$</span>
+                            <label>Total de ventas</label>
+                            <input type="text" id="total-ventas" value="000.00$" readonly>
                         </div>
-                        <button onclick="descargarExel()">Descargar Plantilla</button>
-                    
+                        <button onclick="confirmarVentas()">Confirmar Ventas</button>
                     </div>
                 </div>
-
+    
                 <div class="cierre-caja">
                     <h2>Cierre Caja</h2>
                     <ul>
-                        <li>Ventas totales de hoy: 000.00$</li>
-                        <li>Gastos totales de hoy: 000.00$</li>
-                        <li>Efectivo totales de hoy: 000.00$</li>
-                        <li>Diferencias: 000.00$</li>
+                        <li>Ventas totales de hoy: <span id="ventas-hoy">000.00$</span></li>
+                        <li>Gastos totales de hoy: <span id="gastos-hoy">000.00$</span></li>
+                        <li>Efectivo totales de hoy: <span id="efectivo-hoy">000.00$</span></li>
+                        <li>Diferencias: <span id="diferencias">000.00$</span></li>
                     </ul>
-
+    
                     <div class="button">
-
-                    <button onclick="realizarCierre">Cerrar Caja</button>
-                    <button onclick="descargarExel">Descargar Plantilla</button>
-                </div>
+                        <button onclick="realizarCierre()">Cerrar Caja</button>
+                        <button onclick="descargarExel()">Descargar Plantilla</button>
+                    </div>
                 </div>
             </div>
         </main>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Recuperar datos almacenados en localStorage (puedes ajustar esto según tu implementación)
+                const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
+    
+                // Calcular el total de gastos
+                const totalGastos = storedProducts.reduce((total, product) => total + parseFloat(product.price), 0);
+    
+                // Actualizar el valor del input
+                const totalGastosInput = document.getElementById("total-gastos");
+                totalGastosInput.value = totalGastos.toFixed(2) + "$";
+            });
+        </script>
+    
         </header> 
         </body>
         </html>

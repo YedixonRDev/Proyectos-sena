@@ -207,3 +207,15 @@ th:nth-child(3), td:nth-child(3) {
     width: 20px;
 }
 
+.delete-button {
+    background-color: #ff0000; /* Rojo */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #cc0000; /* Cambia el color cuando el mouse está sobre el botón */
+}

@@ -33,7 +33,6 @@
             </div>
             <ul class="opciones">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="ventas.html">Estado de Ventas</a></li>
                 <li><a href="inventario.html">Gestion de Inventario</a></li>
                 <li><a href="libro.html">Libro Diario</a></li>
                 <li><a href="cuadrecaja.html">Cuadre de caja</a></li>
@@ -67,6 +66,38 @@
             </div>
             
         </main>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const productList = document.getElementById("product-list");
+            
+                // Recuperar datos almacenados en localStorage
+                const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
+            
+                // Mostrar los productos almacenados en la tabla
+                storedProducts.forEach((product, index) => {
+                    const newRow = productList.insertRow();
+                    newRow.innerHTML = `<td>${product.name}</td>
+                                        <td>${product.quantity}</td>
+                                        <td>${product.price}</td>
+                                        <td>${product.category}</td>
+                                        <td><button class="delete-button" data-index="${index}">Eliminar</button></td>`;
+                });
+            
+                // Manejar la eliminación de productos
+                productList.addEventListener("click", function (e) {
+                    if (e.target.classList.contains("delete-button")) {
+                        const index = e.target.dataset.index;
+            
+                        // Eliminar la fila de la tabla
+                        productList.deleteRow(index);
+            
+                        // Eliminar el producto del almacenamiento local
+                        storedProducts.splice(index, 1);
+                        localStorage.setItem("products", JSON.stringify(storedProducts));
+                    }
+                });
+            });
+            </script>
     </header>
 </body>
 </html>

@@ -41,80 +41,77 @@
         </div>
 
         <main>
-        <div class="bloque1">
-            <h2>Inventario de Productos</h2>
-            <form id="product-form">
-                <label for="product-name">Nombre del Producto:</label>
-                <input type="text" id="product-name" required>
+            <div class="bloque1">
+                <h2>Agregar Productos</h2>
+                <form id="product-form">
+                    <label for="product-name">Nombre del Producto:</label>
+                    <input type="text" id="product-name" required>
         
-                <label for="product-quantity">Cantidad Disponible:</label>
-                <input type="number" id="product-quantity" required>
+                    <label for="product-quantity">Cantidad Disponible:</label>
+                    <input type="number" id="product-quantity" required>
         
-                <label for="product-price">Precio:</label>
-                <input type="number" id="product-price" required>
+                    <label for="product-price">Precio:</label>
+                    <input type="number" id="product-price" required>
         
-                <label for="product-category">Categoría:</label>
-                <select id="product-category" required>
-                    <option value="Categoria1">Categoría 1</option>
-                    <option value="Categoria2">Categoría 2</option>
-                    <option value="Categoria3">Categoría 3</option>
-                </select>
+                    <label for="product-category">Categoría:</label>
+                    <input type="text" id="product-category" required>
         
-                <button type="button" id="add-product">Agregar Producto</button>
-            </form>
+                    <!-- Agrega un botón para agregar productos -->
+                    <button type="submit" id="add-product">Agregar Producto</button>
+                    <div class="button-producto">
+                        <a href="inven-lista.productos.html" id="ver-productos-button">Ver productos</a>
+                    </div>
+                    
+                </form>
         
-            <table id="product-table">
-                <thead>
-                    <tr>
-                        <th class="name">Nombre del Producto</th>
-                        <th class="cant">Cantidad Disponible</th>
-                        <th class="precio">Precio</th>
-                        <th class="categoria">Categoría</th>
-                        <th class="acciones">Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody id="product-list">
-                    <!-- Aquí se cargarán los productos dinámicamente con JavaScript -->
-                </tbody>
-            </table>
-        </div>
+            
+            </div>
+        </main>
+        
         <script>
-            // JavaScript para agregar productos a la lista
-document.addEventListener("DOMContentLoaded", function () {
-    const productForm = document.getElementById("product-form");
-    const productList = document.getElementById("product-list");
-
-    productForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Obtener los valores de los campos del formulario
-        const productName = document.getElementById("product-name").value;
-        const productQuantity = document.getElementById("product-quantity").value;
-        const productPrice = document.getElementById("product-price").value;
-        const productCategory = document.getElementById("product-category").value;
-
-        // Crear una nueva fila en la tabla con los datos del producto
-        const newRow = productList.insertRow();
-        newRow.innerHTML = `<td>${productName}</td>
-                            <td>${productQuantity}</td>
-                            <td>${productPrice}</td>
-                            <td>${productCategory}</td>
-                            <td><button class="delete-button">Eliminar</button></td>`;
-
-        // Limpiar los campos del formulario
-        productForm.reset();
-    });
-
-    // Manejar la eliminación de productos
-    productList.addEventListener("click", function (e) {
-        if (e.target.classList.contains("delete-button")) {
-            const row = e.target.closest("tr");
-            productList.deleteRow(row.rowIndex);
-        }
-    });
-});
-        </script>
-    </main>
+            document.addEventListener("DOMContentLoaded", function () {
+                const productForm = document.getElementById("product-form");
+            
+                productForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+            
+                    const productName = document.getElementById("product-name").value;
+                    const productQuantity = document.getElementById("product-quantity").value;
+                    const productPrice = document.getElementById("product-price").value;
+                    const productCategory = document.getElementById("product-category").value;
+            
+                    const productData = {
+                        name: productName,
+                        quantity: productQuantity,
+                        price: productPrice,
+                        category: productCategory
+                    };
+            
+                    const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
+                    storedProducts.push(productData);
+                    localStorage.setItem("products", JSON.stringify(storedProducts));
+            
+                    showMessage("Producto agregado con éxito");
+            
+                    // Redirige a la otra página después de 3 segundos
+                    setTimeout(() => {
+                        window.location.href = "inven-lista.productos.html";
+                    }, 3000);
+                });
+            
+                function showMessage(message) {
+                    const messageContainer = document.createElement("div");
+                    messageContainer.className = "success-message";
+                    messageContainer.textContent = message;
+            
+                    productForm.insertAdjacentElement("afterend", messageContainer);
+            
+                    setTimeout(() => {
+                        messageContainer.remove();
+                    }, 3000);
+                }
+            });
+            </script>
 
 
           

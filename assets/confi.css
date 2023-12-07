@@ -112,8 +112,8 @@ main{
     background-color: #fff;
     color: #0d1b2a;
     position: absolute;
-    width: 75%;
-    height: 470px;
+    width: 80%;
+    height: 650px;
     left: 265px;
     margin-top: 80px;
     padding-bottom: 30px;
@@ -179,15 +179,4 @@ main{
     text-align: center;
     font-size: 25px;
 }
-
-/* responsive.css */
-@media screen and (max-width: 768px) {
-    /* Estilos para pantallas más pequeñas */
-}
-
-@media screen and (min-width: 769px) {
-    /* Estilos para pantallas más grandes */
-}
-
-
 

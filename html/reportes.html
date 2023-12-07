@@ -32,7 +32,6 @@
             </div>
             <ul class="opciones">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="ventas.html">Estado de Ventas</a></li>
                 <li><a href="inventario.html">Gestion de Inventario</a></li>
                 <li><a href="libro.html">Libro Diario</a></li>
                 <li><a href="cuadrecaja.html">Cuadre de caja</a></li>
@@ -54,28 +53,62 @@
                 <div class="reportes">
                     <div class="reportes-container">
                         <h2>Reportes por dia</h2>
-                        <ul class="productos">
-                            <li>Cant. de Pollo Broaster: xxx <br>
-                            Venta Total: 000.00$</li>
-
-                            <li>Cant. de Pollo Asado: xxx <br>
-                                Venta Total: 000.00$</li>
-
-                            <li>Cant. de Panes: xxx <br>
-                                    Venta Total: 000.00$</li>
-                            <li>Cant. de Gaseosas: xxx <br>
-                                    Venta Total: 000.00$</li>
-                            <li>Cant. de Combos: xxx <br>
-                                    Venta Total: 000.00$</li>
-                            <li>Cant. de Jugos Naturales : xxx <br>
-                                    Venta Total: 000.00$</li>
-                        </ul>
-
+                        <div class="productos">
+                            <div>
+                                <label for="polloBroaster">Cant. de Pollo Broaster:</label>
+                                <input type="text" id="polloBroaster" value="xxx" disabled>
+                                <label for="ventaPolloBroaster">Venta Total:</label>
+                                <input type="text" id="ventaPolloBroaster" value="000.00$" disabled>
+                            </div>
+                
+                            <div>
+                                <label for="polloAsado">Cant. de Pollo Asado:</label>
+                                <input type="text" id="polloAsado" value="xxx" disabled>
+                                <label for="ventaPolloAsado">Venta Total:</label>
+                                <input type="text" id="ventaPolloAsado" value="000.00$" disabled>
+                            </div>
+                
+                            <div>
+                                <label for="panes">Cant. de Panes:</label>
+                                <input type="text" id="panes" value="xxx" disabled>
+                                <label for="ventaPanes">Venta Total:</label>
+                                <input type="text" id="ventaPanes" value="000.00$" disabled>
+                            </div>
+                
+                            <div>
+                                <label for="gaseosas">Cant. de Gaseosas:</label>
+                                <input type="text" id="gaseosas" value="xxx" disabled>
+                                <label for="ventaGaseosas">Venta Total:</label>
+                                <input type="text" id="ventaGaseosas" value="000.00$" disabled>
+                            </div>
+                
+                            <div>
+                                <label for="combos">Cant. de Combos:</label>
+                                <input type="text" id="combos" value="xxx" disabled>
+                                <label for="ventaCombos">Venta Total:</label>
+                                <input type="text" id="ventaCombos" value="000.00$" disabled>
+                            </div>
+                
+                            <div>
+                                <label for="jugosNaturales">Cant. de Jugos Naturales:</label>
+                                <input type="text" id="jugosNaturales" value="xxx" disabled>
+                                <label for="ventaJugosNaturales">Venta Total:</label>
+                                <input type="text" id="ventaJugosNaturales" value="000.00$" disabled>
+                            </div>
+                        </div>
+                
                         <div class="venta">
-                            <ul class="venta">
-                                <li>Venta Total: 000.00$</li>
-                            </ul>
+                            <div class="venta-total">
+                                <label for="totalVenta">Venta Total:</label>
+                                <input type="text" id="totalVenta" value="000.00$" disabled>
+                            </div>
                             <button onclick="descargarExel()">Descargar Plantilla</button>
                         </div>
                     </div>
                 </div>
+                
+            </div>
+        </main>
+    </header>
+</body>
+</html>

@@ -1,28 +1,29 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:  'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-body{
 
+body {
     background-color: #e8e8e8;
-    background-size: 100vw 100 vh;
+    background-size: 100vw 100vh;
     background-repeat: no-repeat;
     font-family: 'Poppins', sans-serif;
- }
+}
 
- .header{
+.header {
     width: 100%;
     height: 70px;
     position: fixed;
-    top: 0; left: 0;
- }
+    top: 0;
+    left: 0;
+}
 
- .container{
+.container {
     max-width: 1200px;
     margin: auto;
- }
+}
 
 .menu {
     position: absolute;
@@ -38,7 +39,7 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.menu i{
+.menu i {
     color: #0d1b2a;
     font-size: 30px;
     align-items: center;
@@ -46,10 +47,10 @@ body{
 }
 
 .menu a {
- color: #0d1b2a;
- text-decoration: none;
- font-size: 18px;
- font-weight: bold;
+    color: #0d1b2a;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .menu-usuario {
@@ -57,11 +58,12 @@ body{
     padding-top: px;
 }
 
-.logo img{
+.logo img {
     height: 70px;
     width: 200px;
 }
-.logo{
+
+.logo {
     text-align: center;
     top: 10px;
 }
@@ -81,7 +83,6 @@ body{
 .opciones {
     list-style: none;
     padding: 0;
-
 }
 
 .opciones li {
@@ -89,25 +90,23 @@ body{
     padding: 0;
 }
 
-.opciones a{
+.opciones a {
     display: block;
     padding: 10px 20px;
     text-decoration: none;
     color: #fff;
-
 }
 
-.opciones a:hover{
+.opciones a:hover {
     background-color: #1f3a59;
-
 }
 
-main{
+main {
     display: flex;
     justify-content: space-between;
 }
 
-.bloque1{
+.bloque1 {
     background-color: #fff;
     color: #0d1b2a;
     position: absolute;
@@ -121,32 +120,28 @@ main{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.bloque1 h2{
-
+.bloque1 h2 {
     margin-top: 5px;
     font-size: 25px;
     margin-left: 10px;
     text-align: center;
-
-
 }
 
-.selector-fecha{
+.selector-fecha {
     text-align: center;
 }
 
 .selector-fecha label,
 .selector-fecha input[type="date"],
-.selector-fecha button{
+.selector-fecha button {
     display: inline;
     width: 200px;
-    margin-bottom:5px ;
+    margin-bottom: 5px;
     text-align: center;
     font-size: 18px;
-
 }
 
-.selector-fecha input{
+.selector-fecha input {
     padding: 5px;
     margin-left: 5px;
     margin-right: 10px;
@@ -159,20 +154,22 @@ main{
     border-radius: 50px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 }
-.ingresos-container h2{
+
+.ingresos-container h2 {
     font-size: 20px;
     margin-left: 30px;
 }
-.ingresos-container{
+
+.ingresos-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1px;
     font-size: 25px;
-    margin-left: 260px;
+    margin-left: 400px;
     font-size: 18px;
+   
 }
 
 .ingreso {
@@ -180,23 +177,19 @@ main{
     justify-content: space-between;
     margin-bottom: 5px;
     margin-top: 1px;
-    
-
 }
 
-.ingreso ul{
+.ingreso ul {
     margin-top: 5px;
     margin-left: 1000px;
-   
 }
 
-.cierre-caja h2{
+.cierre-caja h2 {
     font-size: 20px;
     margin-left: 60px;
-
 }
 
-.cierre-caja ul{
+.cierre-caja ul {
     margin-left: 60px;
     font-size: 18px;
     align-items: center;
@@ -204,9 +197,9 @@ main{
     flex-direction: column;
     display: flex;
 }
-.cierre-caja {
 
-    margin-left: -90px ;
+.cierre-caja {
+    margin-right: 180px;
 }
 
 ul {
@@ -214,24 +207,42 @@ ul {
     padding: 0;
 }
 
-li{
+li {
     margin-bottom: 5px;
-
 }
 
-button{
+button {
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    
+    margin-top: 10px;
+    margin-left: 30px;
 }
+
 .button {
     margin-left: 380px;
-    
 }
+
 button:hover {
     background-color: #043161;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    display: block;
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
