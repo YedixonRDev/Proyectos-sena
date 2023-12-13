@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Poppins', sans-serif;
+}
+body{
+
+    background-color: #fff;
+ }
+
+.container{
+    display: flex;
+    height: 700px;
+    width: 1000px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0,4);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.info {
+    background-color: #0d1b2a;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 150px 50px;
+    width: 50%;
+    text-align: center;
+    color: #fff;
+}
+
+.logo img {
+    width: 300px;
+    height: 10%;
+    background-image: url('./logo.PNG');
+}
+
+
+.text-1 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.info h2{
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.submit-1 {
+    background-color: #e8e8e8;
+    color: #0d1b2a;
+    border: 2px solid #0d1b2a;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.form{
+    padding: 150px 100px;
+    width: 50%;
+    text-align: center;
+    background-color: #e8e8e8;
+}
+
+.form h1{
+    color: #0d1b2a;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    outline: none;
+    border-color: #0d1b2a;
+    border-width: 0px 0px 0px 5px;
+    border-style: solid;
+    padding: 15px 35px;
+    background-color: #fff;
+}
+
+.button-2 button.submit {
+    background-color: #0d1b2a;
+    color: #fff;
+    border: 2px solid #0d1b2a;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.button-2 button.submit:hover {
+    background-color: #e8e8e8;
+    color: #0d1b2a;
+    border-color: #0d1b2a;
+}
+
+.submit-2 {
+    background-color: #0d1b2a;
+    color: #fff;
+    border: 2px solid #0d1b2a;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
+}
+
+.submit-2:hover {
+    background-color: #e8e8e8;
+    color: #0d1b2a;
+    border-color: #0d1b2a;
+}
