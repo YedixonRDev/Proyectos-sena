@@ -1,2 +1,2 @@
-# InvenPRO
- Un gestor integral de ventas e inventario diseñado para restaurantes. Simplifica la gestión de pedidos, control de inventario, y mejora la eficiencia operativa en tu negocio gastronómico.
+# Projectsena
+  Repositorio de proyectos realizados durante mi formación en el SENA. Aquí encontrarás una variedad de actividades realizadas como parte de mi formación en el SENA.
